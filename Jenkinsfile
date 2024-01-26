@@ -15,10 +15,7 @@ pipeline {
             steps {
                 // Cette étape utilise Gradle pour construire votre projet
                 script {
-                    def gradleHome = tool '6.7.1' // Assurez-vous d'avoir configuré un outil Gradle dans Jenkins
-                    def gradleCmd = "${gradleHome}/bin/gradle"
-
-                    sh "${gradleCmd} assemble"
+                    sh './gradlew clean build'
                 }
             }
         }
@@ -27,10 +24,8 @@ pipeline {
             steps {
                 // Cette étape utilise Gradle pour exécuter les tests
                 script {
-                    def gradleHome = tool '6.7.1' // Assurez-vous d'avoir configuré un outil Gradle dans Jenkins
-                    def gradleCmd = "${gradleHome}/bin/gradle"
-
-                    sh "${gradleCmd} test"
+                    // Étape de test avec Gradle
+                    sh './gradlew test'
                 }
             }
         }

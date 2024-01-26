@@ -37,8 +37,8 @@ configurations {
 
 project.version = findProperty("version") ?: scmVersion.version
 
-sourceCompatibility = 1.9
-targetCompatibility = 1.9
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 group = 'pl.touk'
 mainClassName = 'pl.touk.sputnik.Main'
 

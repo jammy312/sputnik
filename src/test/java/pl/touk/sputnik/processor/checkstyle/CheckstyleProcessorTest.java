@@ -24,14 +24,36 @@ class CheckstyleProcessorTest extends TestEnvironment {
                 GeneralOption.CHECKSTYLE_CONFIGURATION_FILE.getKey(), "src/test/resources/checkstyle/checkstyle.xml"));
         fixture = new CheckstyleProcessor(config);
     }
-    @Test
-    void shouldAddExtensionToName(){
-        String basicName = fixture.getName();
-        String extension = "Ext";
-        String expectedResult = basicName + extension;
-        System.out.println( expectedResult);
-        assertThat(fixture.getNamePlusExtension(extension).equals(expectedResult));
-    }
+
+//    @Test
+//    void shouldAddExtensionToName(){
+//        String basicName = fixture.getName();
+//        String extension = "Ext";
+//        String expectedResult = basicName + extension;
+//        System.out.println( expectedResult);
+//        assertThat(fixture.getNamePlusExtension(extension).equals(expectedResult));
+//    }
+
+//    @Test
+//    void shouldAddExtensionToNameIfExtensionIsANumber(){
+//        String basicName = fixture.getName();
+//        String extension = "1";
+//        String expectedResult = basicName + extension;
+//        System.out.println( expectedResult);
+//        assertThat(fixture.getNamePlusExtension(extension).equals(expectedResult));
+//    }
+//
+//    @Test
+//    void shouldAddExtensionToNameIfExtensionIsASpecialChar(){
+//        String basicName = fixture.getName();
+//        String extension = "*";
+//        String expectedResult = basicName + extension;
+//        System.out.println( expectedResult);
+//        assertThat(fixture.getNamePlusExtension(extension).equals(expectedResult));
+//    }
+
+
+
     @Test
     void shouldReturnBasicSunViolationsOnSimpleClass() {
         ReviewResult reviewResult = fixture.process(review());

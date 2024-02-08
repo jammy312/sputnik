@@ -45,6 +45,12 @@ public class CheckstyleProcessor implements ReviewProcessor {
         return SOURCE_NAME;
     }
 
+    @NotNull
+    public String getNamePlusExtension(String toAdd) {
+        String namePlusExtension = SOURCE_NAME + toAdd;
+        return namePlusExtension;
+    }
+
     private void innerProcess(@NotNull Review review, @NotNull AuditListener auditListener) {
         List<File> files = review.getFiles(new JavaFilter(), new IOFileTransformer());
         Checker checker = createChecker(auditListener);
